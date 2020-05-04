@@ -89,7 +89,7 @@ public class AGVobsAgent : Agent
     }
 
     public override void OnActionReceived(float[] vectorAction){
-        SetReward(-1f/3000);
+        SetReward(-4f/3000);
 		MoveAgent(vectorAction);
     }
 
@@ -141,6 +141,9 @@ public class AGVobsAgent : Agent
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.CompareTag("Goal")){
 			SetReward(1f);		    
+		}
+		if(col.gameObject.CompareTag("Obstacle")){
+			SetReward(-0.4f);		    
 		}
 		EndEpisode();
     }
