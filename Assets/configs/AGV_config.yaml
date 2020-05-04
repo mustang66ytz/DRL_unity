@@ -30,6 +30,22 @@ AGV2:
     time_horizon: 1000
     batch_size: 2024
     buffer_size: 20240
+    max_steps: 2e7
+    summary_freq: 30000
+    num_layers: 3
+    hidden_units: 512
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.995
+
+
+AGV3_deprecated:
+    normalize: true
+    num_epoch: 3
+    time_horizon: 1000
+    batch_size: 2024
+    buffer_size: 20240
     max_steps: 1e7
     summary_freq: 30000
     num_layers: 3
@@ -39,3 +55,21 @@ AGV2:
             strength: 1.0
             gamma: 0.995
 
+AGV3:
+    summary_freq: 30000
+    time_horizon: 128
+    batch_size: 128
+    buffer_size: 2048
+    hidden_units: 512
+    num_layers: 2
+    beta: 1.0e-2
+    max_steps: 1.0e7
+    num_epoch: 3
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+        curiosity:
+            strength: 0.02
+            gamma: 0.99
+            encoding_size: 256
