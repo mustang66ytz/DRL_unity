@@ -8,4 +8,4 @@
 
 ![unity to ros rviz](gifs/unity2ros.gif)
 
-![unity pose publisher example](gifs/pose-unity2ros.gif)
+![unity pose publisher example](gifs/pose-unity2ros.png)
